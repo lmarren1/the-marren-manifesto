@@ -30,8 +30,17 @@ function formatDate(date) {
 
 // Update HTML
 document.addEventListener('DOMContentLoaded', function() {
-    const startOfWeek = getStartOfMostRecentWeek();
-    document.getElementById('latest-post').textContent = startOfWeek;
-    const copyrightYear = getCurrentYear();
-    document.getElementById('copyright-year').textContent = copyrightYear;
+    // Update start of week if element exists
+    const latestPostElement = document.getElementById('latest-post');
+    if (latestPostElement) {
+        const startOfWeek = getStartOfMostRecentWeek();
+        latestPostElement.textContent = startOfWeek;
+    }
+
+    // Update copyright year
+    const copyrightYearElement = document.getElementById('copyright-year');
+    if (copyrightYearElement) {
+        const copyrightYear = getCurrentYear();
+        copyrightYearElement.textContent = copyrightYear;
+    }
 });

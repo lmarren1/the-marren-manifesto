@@ -78,3 +78,16 @@ footer a:hover {
     text-decoration: underline; /* Underline on hover */
     background-color: transparent;
 }
+
+img {
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 400px;
+    max-height: 300px;
+}
+
+.image:hover {
+    background-color: transparent;
+    transition: none;
+}
