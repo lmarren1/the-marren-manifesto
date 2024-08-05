@@ -12,8 +12,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #002F4C;
-    color: #007BFF;
-    color: #FFD700;
     color: #F4F4F4;
 }
 
@@ -91,3 +89,18 @@ img {
     background-color: transparent;
     transition: none;
 }
+
+article {
+    scroll-margin-top: 80px; /* Prevents intra-page links from being hidden by main navbar */
+}
+
+article p {
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.color {
+    color: #00BFFF;
+}
+

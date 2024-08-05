@@ -29,6 +29,7 @@ I have wide-ranging interests that I'd like to connect through software. These i
 - Electronics
 - Languages
 - Travelling
+- Piano
 
 By completing projects in these domains and continually improving myself as a developer, I believe I will ultimately make tangible use of a passion I've refined. And beyond that, maybe I'll be able to help others out and meet new people along the way!
 
