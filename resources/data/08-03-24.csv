@@ -1,2 +1,2 @@
-Start Time,End Time,Motivation Level,Stress Level,Focus Level,Enjoyment Level,Minutes Worked,Hours Worked,Number of Sessions,Cumulative Hours Worked
-23:00,02:07,5,1,4,5,187.0,3.12,1,3.12
+start_time,end_time,motivation_level,stress_level,focus_level,minutes_worked_session,hours_worked_session,hours_worked_day,session_number,cumulative_hours_worked
+23:00,02:07,5,1,4,187.0,3.12,3.12,1,3.12

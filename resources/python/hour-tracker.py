@@ -7,12 +7,12 @@ def check_file_exists(file_path):
     if (not os.path.exists(file_path)):
         with open(file_path, 'a', newline='') as file:
             writer = csv.writer(file, delimiter = ',')
-            writer.writerow(['Start Time', 'End Time',
-                             'Motivation Level', 'Stress Level', 
-                             'Focus Level', 'Enjoyment Level',
-                             'Minutes Worked', 'Hours Worked',
-                             'Number of Sessions',
-                             'Cumulative Hours Worked',])
+            writer.writerow(['start_time', 'end_time',
+                             'motivation_level', 'stress_level', 
+                             'focus_level', 'minutes_worked_session', 
+                             'hours_worked_session', 'hours_worked_day',
+                             'session_number',
+                             'cumulative_hours_worked',])
 
 def get_csv_value(file_path, row, col):
     '''Get CSV value based on row and column number.'''
@@ -130,6 +130,15 @@ def get_cumulative_hours_worked(directory, date):
     # Return last cumulative hours worked logged
     return float(get_csv_value(latest_file_path, -1, -1))
 
+def get_hours_worked_today(file_path):
+    '''Get last entry of hours worked today from the current CSV.'''
+    try:
+        hours_worked_today = float(get_csv_value(file_path, row=-1, col=8))
+        return hours_worked_today
+    # If there's no entries, it'll throw an error (cannot convert str to float)
+    except ValueError:
+        return 0
+
 def get_user_input():
     '''Prompt the user for input and return a list with the data.'''
 
@@ -140,22 +149,23 @@ def get_user_input():
     motivation_level = check_rating_scale(int(input("How motivated were you during this session? (1-5) ")))
     stress_level = check_rating_scale(int(input("How stressed were you coming into this session? (1-5) ")))
     focus_level = check_rating_scale(int(input("How focused were you during this session? (1-5) ")))
-    enjoyment_level = check_rating_scale(int(input("How much did you enjoy this session? (1-5) ")))
 
     # Calculate other session metrics based on user input
     print('Data collection was successful.')
-    minutes_worked = calculate_time_difference(start_time, end_time)
-    hours_worked = round(minutes_worked / 60, 2)
+    minutes_worked_session = calculate_time_difference(start_time, end_time)
+    hours_worked_session = round(minutes_worked_session / 60, 2)
 
-    cumulative_hours_worked = get_cumulative_hours_worked('resources/data', date) + hours_worked
+    cumulative_hours_worked = round(get_cumulative_hours_worked('resources/data', date) + hours_worked_session, 2)
     file_path = f'resources/data/{date}.csv'
     check_file_exists(file_path)
-    number_of_sessions = count_session_number(file_path)
+    hours_worked_day = get_hours_worked_today(file_path) + hours_worked_session
+    session_number = count_session_number(file_path)
 
     # Return session entry
     return {'file path': file_path,
-            'entry': [start_time, end_time, motivation_level, stress_level, focus_level, enjoyment_level, 
-            minutes_worked, hours_worked, number_of_sessions, cumulative_hours_worked]}
+            'entry': [start_time, end_time, motivation_level, stress_level, focus_level, 
+                      minutes_worked_session, hours_worked_session, hours_worked_day, session_number,
+                      cumulative_hours_worked]}
 
 def write_csv(file_path, entry):
     '''Write to existing CSV.'''
