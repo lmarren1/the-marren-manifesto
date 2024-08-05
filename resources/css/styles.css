@@ -1,0 +1,80 @@
+/* Reset default margin and padding for body and html */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Ensure body and html take full height */
+}
+
+body {
+    text-align: center;
+    font-family: 'Fira Code', monospace; 
+    margin: 0;
+    padding: 0;
+    background-color: #002F4C;
+    color: #007BFF;
+    color: #FFD700;
+    color: #F4F4F4;
+}
+
+header {
+    text-align: center; /* Center text */
+    padding-top: 70px; /* Separate Header from Navbar */
+}
+
+h1 {
+    color:#FF6F61;
+}
+
+a {
+    text-decoration: none; /* Removes link underline */
+    color: #F4F4F4;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.navbar {
+    margin-top: 0;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #333; 
+    z-index: 1000; /* Ensure it stays on top */
+    padding: 10px 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    box-sizing: border-box; /* Include padding and border in the width */    
+}
+
+a:hover {
+    background-color: #FF6F61;
+    transition: background-color 0.3s;
+}
+
+a:visited {
+    color: grey;        
+}
+
+a:active {
+    color: #003d7a;       
+}
+
+footer {
+    background-color: #333; /* Charcoal background for footer */
+    padding: 15px;       
+    position: relative; /* Fix the footer at the bottom */
+    width: 100%;
+    margin: 0;
+}
+
+footer a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+    background-color: transparent;
+}
