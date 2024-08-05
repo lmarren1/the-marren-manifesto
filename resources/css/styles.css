@@ -104,3 +104,12 @@ article p {
     color: #00BFFF;
 }
 
+.about-motivation {
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.blog-post-list {
+    padding-bottom: 5%;
+}
