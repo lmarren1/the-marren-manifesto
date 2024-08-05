@@ -51,50 +51,47 @@ def get_csv_value(file_path, row, col):
         return None
 
 def check_time_format(time):
-    '''Alert user if time format is incorrect.'''
+    '''Reprompt user if time format isn't %H:%M.'''
     try:
         dt.datetime.strptime(time, '%H:%M')
         return time
     except ValueError:
-        print('Incorrect time format.')
-        return None
+        new_time = input('Incorrect time format. Try again (HH:MM). ')
+        return check_time_format(new_time)
+
     
 def check_date_format(date):
-    '''Alert user if date format is incorrect.'''
+    '''Reprompt user if date format isn't %m-%d-%y.'''
     try:
         dt.datetime.strptime(date, '%m-%d-%y')
         return date
     except ValueError:
-        print('Incorrect date format.')
-        return None
+        new_date = input('Incorrect date format. Try again (MM-DD-YY). ')
+        return check_date_format(new_date)
 
 def check_rating_scale(rating):
+    '''Reprompt user if rating is outside of 1-5 range.'''
     if rating < 1 or rating > 5:
-        print('Incorrect rating input.')
-        return None
+        new_rating = input('Incorrect rating input. Try again (1-5).')
+        return check_rating_scale(new_rating)
     return rating
 
 def calculate_time_difference(time1, time2, time_format='%H:%M'):
-    '''Calculate the minute difference between two given times.'''
-    try:
-        # Parse the time strings into datetime objects
-        t1 = dt.datetime.strptime(time1, time_format)
-        t2 = dt.datetime.strptime(time2, time_format)
-        
-        # Calculate the difference
-        difference = t2 - t1
-        
-        # If the difference is negative, assume that t2 is on the following day
-        if difference.total_seconds() < 0:
-            difference += dt.timedelta(days=1)
-        
-        # Convert the difference to minutes
-        difference_in_minutes = difference.total_seconds() / 60
-        return difference_in_minutes
-
-    except ValueError:
-        print('Incorrect time format.')
-        return None
+    '''Calculate minute difference between two given times.'''
+    # Parse the time strings into datetime objects
+    t1 = dt.datetime.strptime(time1, time_format)
+    t2 = dt.datetime.strptime(time2, time_format)
+    
+    # Calculate the difference
+    difference = t2 - t1
+    
+    # If the difference is negative, assume that t2 is on the following day
+    if difference.total_seconds() < 0:
+        difference += dt.timedelta(days=1)
+    
+    # Convert the difference to minutes
+    difference_in_minutes = difference.total_seconds() / 60
+    return difference_in_minutes
 
 def count_session_number(file_path):
     '''Count number of sessions had in a given day based on entries in the day's CSV.'''
@@ -120,7 +117,7 @@ def get_cumulative_hours_worked(directory, date):
             file_dates.append(file_date)
     
     if not file_dates:
-        print('No CSVs found before the provided date.')
+        print('Warning: no CSVs found before the provided date.')
         return 0
     
     # Find the latest file based on date
@@ -135,21 +132,15 @@ def get_cumulative_hours_worked(directory, date):
 
 def get_user_input():
     '''Prompt the user for input and return a list with the data.'''
+
     # Get user input
     date = check_date_format(input("What is the date you worked? (MM-DD-YY): "))
     start_time = check_time_format(input("When did you START working? (HH-MM) "))
     end_time = check_time_format(input("When did you STOP working? (HH:MM) "))
-
     motivation_level = check_rating_scale(int(input("How motivated were you during this session? (1-5) ")))
     stress_level = check_rating_scale(int(input("How stressed were you coming into this session? (1-5) ")))
     focus_level = check_rating_scale(int(input("How focused were you during this session? (1-5) ")))
     enjoyment_level = check_rating_scale(int(input("How much did you enjoy this session? (1-5) ")))
-
-    # Check if data collection succeeded
-    user_input = [date, start_time, end_time, motivation_level, stress_level, focus_level, enjoyment_level]
-    if any(value is None for value in user_input):
-        print('Data collection was unsuccessful.')
-        return
 
     # Calculate other session metrics based on user input
     print('Data collection was successful.')
