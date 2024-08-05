@@ -8,14 +8,12 @@ function getStartOfMostRecentWeek() {
     const dayOfWeek = now.getDay();
     const startOfWeek = new Date(now);
 
-    // If today is Sunday, set the start of the week to today
-    if (dayOfWeek === 0) {
-        startOfWeek.setDate(now.getDate());
-    } else {
-        // Calculate Sunday of the current week
-        startOfWeek.setDate(now.getDate() - (dayOfWeek - 1));
-    }
-
+    // Calculate the difference from Sunday
+    const daysToSubtract = dayOfWeek; // 0 for Sunday, 1 for Monday, etc.
+    
+    // Set the date to the most recent Sunday
+    startOfWeek.setDate(now.getDate() - daysToSubtract);
+    
     return formatDate(startOfWeek);
 }
 
