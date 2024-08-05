@@ -71,8 +71,8 @@ Weekdays | Weekends | Total
 
 Hopefully I'll  be able to devote more time on some days towards this weekly total so I can have some buffer room for busier days.
 
-## Link to Blog
-I'm using this repo's [GitHub Pages deployment](https://lmarren1.github.io/mastery-tracker/ "My Mastery Tracker") as a blog where I can track my progress. 
+## Link to Website
+I'm using this repo's [GitHub Pages deployment](https://lmarren1.github.io/mastery-tracker/ "My Mastery Tracker") to track my progress. 
 
 ## Contact Information
 If you'd like to reach out to me regarding work opportunities, check out my [LinkedIn](https://www.linkedin.com/in/luke-marren-aa9912206/ "Luke Marren's LinkedIn Profile")!
