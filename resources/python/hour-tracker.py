@@ -5,6 +5,7 @@ import csv
 def check_file_exists(file_path):
     '''Check if file path exists, if not then create CSV.'''
     if (not os.path.exists(file_path)):
+        # Always add newline='' to ensure no line skipping on appending to file
         with open(file_path, 'a', newline='') as file:
             writer = csv.writer(file, delimiter = ',')
             writer.writerow(['start_time', 'end_time',
@@ -17,33 +18,38 @@ def check_file_exists(file_path):
 def get_csv_value(file_path, row, col):
     '''Get CSV value based on row and column number.'''
     try:
+        # Newline='' unnecessary when reading files
         with open(file_path, 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
             
-            # Check if the CSV is empty
+            # Check if CSV is empty
             if not rows:
                 print('The file is empty.')
                 return None
             
+            # Check if row and col indices are within range
+            if row >= len(rows) or col >= len(rows[row]):
+                print('Row or column index out of range.')
+                return None
+            
+# Do I have to handle negative indexing for rows? Seems like that's just an issue with pandas dfs? - this is using lists w/ the reader        
+# Is it necessary/good practice to close a file after you're done reading from it?            
+
             # Handle negative indexing for rows
             if row < 0:
                 row = len(rows) + row
             # Handle negative indexing for columns
-            if rows:
-                if col < 0:
-                    col = len(rows[0]) + col
-            else:
-                print('The file is empty.')
-                return None
+            # if rows:
+            if col < 0:
+                col = len(rows[0]) + col
+            # else:
+            #     print('The file is empty.')
+            #     return None
 
-            # Check if the row and column indices are within range
-            if row >= len(rows) or col >= len(rows[row]):
-                print('Row or column index out of range.')
-                return None
-
-            # Get the value from the CSV
+            # Get value from CSV and close file
             csv_value = rows[row][col]
+            file.close()
             return csv_value
 
     except Exception as e:
@@ -133,7 +139,7 @@ def get_cumulative_hours_worked(directory, date):
 def get_hours_worked_today(file_path):
     '''Get last entry of hours worked today from the current CSV.'''
     try:
-        hours_worked_today = float(get_csv_value(file_path, row=-1, col=8))
+        hours_worked_today = float(get_csv_value(file_path, row=-1, col=7))
         return hours_worked_today
     # If there's no entries, it'll throw an error (cannot convert str to float)
     except ValueError:
