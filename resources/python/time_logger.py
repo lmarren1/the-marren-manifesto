@@ -4,7 +4,7 @@
 """
 Name: time_logger
 
-Version: 0.0.3
+Version: 0.0.4
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.

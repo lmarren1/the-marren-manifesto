@@ -4,7 +4,7 @@
 """
 Name: time_logger_analysis
 
-Version: 0.0.2
+Version: 0.0.3
 
 Summary:
     This script produces summary statistical analysis on the CSV files produced for the 10k mastery tracker project.

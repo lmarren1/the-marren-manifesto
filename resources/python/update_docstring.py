@@ -4,7 +4,8 @@
 """
 Name: update_docstring
 
-Version: 0.0.1
+Version: 
+    0.0.1
 
 Summary:
     This script updates the version portion of the doctring of the Python files whenever commits are made.
@@ -15,7 +16,7 @@ Author:
 License: MIT    
 
 Requires:
-    re, sys
+    re, sys, datetime
 
 Date Last Modified:
     August 07, 2024
@@ -24,7 +25,6 @@ Date Last Modified:
 import sys
 import re
 from datetime import datetime
-import os
 
 
 def update_version(content: str) -> str:
@@ -37,7 +37,7 @@ def update_version(content: str) -> str:
     Returns:
         str: The updated content with the new version.
     """
-    version_pattern = re.compile(r"(Version:\s*)\d+\.\d+\.\d+")
+    version_pattern = re.compile(r"(Version:\s*\n\s*)\d+\.\d+\.\d+")
     version_match = version_pattern.search(content)
 
     if version_match:
@@ -67,7 +67,7 @@ def update_date(content: str) -> str:
     Returns:
         str: The updated content with the new date.
     """
-    date_pattern = re.compile(r"(Date Last Modified:\s*)\w+ \d{2}, \d{4}")
+    date_pattern = re.compile(r"(Date Last Modified:\s*\n\s*)\w+ \d{2}, \d{4}")
     current_date = datetime.now().strftime("%B %d, %Y")
     content = date_pattern.sub(f"Date Last Modified: {current_date}", content)
 
