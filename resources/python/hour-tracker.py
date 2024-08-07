@@ -18,7 +18,6 @@ def check_file_exists(file_path):
 def get_csv_value(file_path, row, col):
     '''Get CSV value based on row and column number.'''
     try:
-        # Newline='' unnecessary when reading files
         with open(file_path, 'r') as file:
             reader = csv.reader(file)
             rows = list(reader)
@@ -27,35 +26,24 @@ def get_csv_value(file_path, row, col):
             if not rows:
                 print('The file is empty.')
                 return None
-            
-            # Check if row and col indices are within range
-            if row >= len(rows) or col >= len(rows[row]):
-                print('Row or column index out of range.')
+
+            # Check if row index is within range
+            if not (-len(rows) <= row < len(rows)):
+                print('Row index out of range.')
                 return None
-            
-# Do I have to handle negative indexing for rows? Seems like that's just an issue with pandas dfs? - this is using lists w/ the reader        
-# Is it necessary/good practice to close a file after you're done reading from it?            
 
-            # Handle negative indexing for rows
-            if row < 0:
-                row = len(rows) + row
-            # Handle negative indexing for columns
-            # if rows:
-            if col < 0:
-                col = len(rows[0]) + col
-            # else:
-            #     print('The file is empty.')
-            #     return None
+            # Check if col index is within range
+            if not (-len(rows[0]) <= col < len(rows[0])):
+                print('Column index out of range.')
+                return None
 
-            # Get value from CSV and close file
-            csv_value = rows[row][col]
-            file.close()
-            return csv_value
+            # Get value from CSV
+            return rows[row][col]
 
     except Exception as e:
         print(f'Error reading the file: {e}')
         return None
-
+    
 def check_time_format(time):
     '''Reprompt user if time format isn't %H:%M.'''
     try:
