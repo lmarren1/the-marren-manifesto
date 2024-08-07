@@ -93,7 +93,6 @@ def count_session_number(file_path):
     with open(file_path, 'r') as file:
         for row in file:
             count += 1
-    file.close()
     return count
 
 def get_cumulative_hours_worked(directory, date):
@@ -166,7 +165,6 @@ def write_csv(file_path, entry):
     with open(file_path, 'a', newline='') as file:
         writer = csv.writer(file, delimiter = ',')
         writer.writerow(entry)
-    file.close()
 
 def main():
     '''Main function to prompt user for input and add a work entry.'''   
