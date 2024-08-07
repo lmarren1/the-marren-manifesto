@@ -5,7 +5,7 @@
 Name: plotly_graph
 
 Version:
-	0.0.1
+	0.0.2
 
 Summary:
     This script produces a plottly graph to visualize the CSV files produced for the 10k mastery tracker project along with their analysis.
