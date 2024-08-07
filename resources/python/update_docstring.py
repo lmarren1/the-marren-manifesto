@@ -4,7 +4,7 @@
 """
 Name: update-version-and-date
 
-Version: 0.0.0
+Version: v25
 
 Summary:
     This script updates the version portion of the doctring of the Python files whenever commits are made.
@@ -18,64 +18,54 @@ Requires:
     re, sys
 
 Date Last Modified:
-    August 7, 2024
+    August 07, 2024
 """
 
-import re
 import sys
+import re
 from datetime import datetime
+import os
 
 
-def update_docstring(file_path: str, new_version: str) -> None:
+def update_docstring(file_path: str, version: str, date: str) -> None:
     """
-    Update the version and date last modified in the docstring of the specified Python file.
+    Update the version and 'Date Last Modified' fields in the docstring of a given file.
 
     Args:
-        file_path (str): The path to the Python file whose docstring is to be updated.
-        new_version (str): The new version number to be set in the file's docstring.
+        file_path (str): Path to the Python file to update.
+        version (str): New version string to be set in the docstring.
+        date (str): New date string to be set in the docstring.
 
     Returns:
-        None: The function performs an in-place update of the file.
-
-    Raises:
-        FileNotFoundError: If the specified file does not exist.
-        IOError: If there is an issue reading or writing the file.
+        None: This function does not return any value. It writes the changes directly
+              to the specified file.
     """
-    try:
-        with open(file_path, "r") as file:
-            content = file.read()
+    if file_path == os.path.abspath(__file__):
+        print(f"Skipping update for script itself: {file_path}")
+        return
 
-        # Define the regex patterns to match the version and date last modified
-        version_pattern = re.compile(r"(Version:\s*)(\S+)")
-        date_pattern = re.compile(r"(Date Last Modified:\s*)([\w\s\d,-]+)")
+    with open(file_path, "r") as file:
+        content = file.read()
 
-        # Get the current date
-        current_date = datetime.now().strftime("%B %d, %Y")
+    # Define regex patterns for version and date
+    version_pattern = r"Version:\s*\n"
+    date_pattern = r"Date Last Modified:\s*\n"
 
-        # Update version and date last modified
-        updated_content = version_pattern.sub(r"\1" + new_version, content)
-        updated_content = date_pattern.sub(r"\1" + current_date, updated_content)
+    # Update version and date
+    content = re.sub(version_pattern, f"Version:\n    {version}\n", content)
+    content = re.sub(date_pattern, f"Date Last Modified:\n    {date}\n", content)
 
-        # Write the updated content back to the file
-        with open(file_path, "w") as file:
-            file.write(updated_content)
-
-        print(
-            f"Updated {file_path}: Version set to {new_version} and Date Last Modified set to {current_date}."
-        )
-
-    except FileNotFoundError:
-        print(f"Error: The file '{file_path}' does not exist.")
-    except IOError as e:
-        print(f"Error: Unable to read/write file. {e}")
+    with open(file_path, "w") as file:
+        file.write(content)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python update_version_and_date.py <file_path> <new_version>")
+    if len(sys.argv) != 4:
+        print("Usage: update_docstring.py <file_path> <version> <date>")
         sys.exit(1)
 
     file_path = sys.argv[1]
-    new_version = sys.argv[2]
+    version = sys.argv[2]
+    date = sys.argv[3]
 
-    update_docstring(file_path, new_version)
+    update_docstring(file_path, version, date)
