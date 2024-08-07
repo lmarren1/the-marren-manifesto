@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: update-version-and-date
+Name: update_docstring
 
 Version: 0.0.1
 

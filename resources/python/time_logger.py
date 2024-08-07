@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: time-logger
+Name: time_logger
 
-Version: 0.0.1
+Version: 0.0.3
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
