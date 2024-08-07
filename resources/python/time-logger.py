@@ -1,3 +1,19 @@
+'''
+Purpose:
+    This script tracks progress made towards my 10,000-hour mastery goal.
+    It generates a CSV file to log such progress for a specific day if none already exists.
+    Otherwise, it will add a work session entry to the day's CSV.
+
+Author:
+    Luke Marren <lmarren1@github.com>
+
+Date Last Modified:
+    August 6, 2024
+
+Version:
+    1.0
+'''
+
 import datetime as dt
 import os
 import csv 
@@ -10,10 +26,7 @@ def check_file_exists(file_path):
             writer = csv.writer(file, delimiter = ',')
             writer.writerow(['start_time', 'end_time',
                              'motivation_level', 'stress_level', 
-                             'focus_level', 'minutes_worked_session', 
-                             'hours_worked_session', 'hours_worked_day',
-                             'session_number',
-                             'cumulative_hours_worked',])
+                             'focus_level', 'minutes_worked'])
 
 def get_csv_value(file_path, row, col):
     '''Get CSV value based on row and column number.'''
@@ -33,7 +46,7 @@ def get_csv_value(file_path, row, col):
                 return None
 
             # Check if col index is within range
-            if not (-len(rows[0]) <= col < len(rows[0])):
+            if not (-len(rows[row]) <= col < len(rows[row])):
                 print('Column index out of range.')
                 return None
 
@@ -87,50 +100,41 @@ def calculate_time_difference(time1, time2, time_format='%H:%M'):
     difference_in_minutes = difference.total_seconds() / 60
     return difference_in_minutes
 
-def count_session_number(file_path):
-    '''Count number of sessions had in a given day based on entries in the day's CSV.'''
-    count = 0
-    with open(file_path, 'r') as file:
-        for row in file:
-            count += 1
-    return count
+# def count_session_number(file_path):
+#     '''Count number of sessions had in a given day based on entries in the day's CSV.'''
+#     count = 0
+#     with open(file_path, 'r') as file:
+#         for row in file:
+#             count += 1
+#     return count
 
-def get_cumulative_hours_worked(directory, date):
-    '''Sort through data directory to get the last cumulative hours worked number logged.'''
+# def get_cumulative_hours_worked(directory, date):
+#     '''Sort through data directory to get the last cumulative hours worked number logged.'''
     
-    # List all CSV files in the directory
-    files = [f for f in os.listdir(directory) if f.endswith('.csv')]
+#     # List all CSV files in the directory
+#     files = [f for f in os.listdir(directory) if f.endswith('.csv')]
     
-    # Extract dates from filenames and filter based on the provided date
-    file_dates = []
-    for file in files:
-        file_date = dt.datetime.strptime(file.replace('.csv', ''), '%m-%d-%y')
-        input_date = dt.datetime.strptime(date, '%m-%d-%y')
-        if file_date <= input_date:
-            file_dates.append(file_date)
+#     # Extract dates from filenames and filter based on the provided date
+#     file_dates = []
+#     for file in files:
+#         file_date = dt.datetime.strptime(file.replace('.csv', ''), '%m-%d-%y')
+#         input_date = dt.datetime.strptime(date, '%m-%d-%y')
+#         if file_date <= input_date:
+#             file_dates.append(file_date)
     
-    if not file_dates:
-        print('Warning: no CSVs found before the provided date.')
-        return 0
+#     if not file_dates:
+#         print('Warning: no CSVs found before the provided date.')
+#         return 0
     
-    # Find the latest file based on date
-    latest_date = max(file_dates)
-    latest_file = latest_date.strftime('%m-%d-%y') + '.csv'
+#     # Find the latest file based on date
+#     latest_date = max(file_dates)
+#     latest_file = latest_date.strftime('%m-%d-%y') + '.csv'
     
-    # Construct the full path to the latest CSV file
-    latest_file_path = os.path.join(directory, latest_file)
+#     # Construct the full path to the latest CSV file
+#     latest_file_path = os.path.join(directory, latest_file)
     
-    # Return last cumulative hours worked logged
-    return float(get_csv_value(latest_file_path, -1, -1))
-
-def get_hours_worked_today(file_path):
-    '''Get last entry of hours worked today from the current CSV.'''
-    try:
-        hours_worked_today = float(get_csv_value(file_path, row=-1, col=7))
-        return hours_worked_today
-    # If there's no entries, it'll throw an error (cannot convert str to float)
-    except ValueError:
-        return 0
+#     # Return last cumulative hours worked logged
+#     return float(get_csv_value(latest_file_path, -1, -1))
 
 def get_user_input():
     '''Prompt the user for input and return a list with the data.'''
@@ -143,22 +147,17 @@ def get_user_input():
     stress_level = check_rating_scale(int(input("How stressed were you coming into this session? (1-5) ")))
     focus_level = check_rating_scale(int(input("How focused were you during this session? (1-5) ")))
 
-    # Calculate other session metrics based on user input
+    # Calculate minutes worked - keep calculations low in raw data!
     print('Data collection was successful.')
-    minutes_worked_session = calculate_time_difference(start_time, end_time)
-    hours_worked_session = round(minutes_worked_session / 60, 2)
+    minutes_worked = calculate_time_difference(start_time, end_time)
 
-    cumulative_hours_worked = round(get_cumulative_hours_worked('resources/data', date) + hours_worked_session, 2)
     file_path = f'resources/data/{date}.csv'
     check_file_exists(file_path)
-    hours_worked_day = get_hours_worked_today(file_path) + hours_worked_session
-    session_number = count_session_number(file_path)
 
     # Return session entry
     return {'file path': file_path,
             'entry': [start_time, end_time, motivation_level, stress_level, focus_level, 
-                      minutes_worked_session, hours_worked_session, hours_worked_day, session_number,
-                      cumulative_hours_worked]}
+                      minutes_worked]}
 
 def write_csv(file_path, entry):
     '''Write to existing CSV.'''
