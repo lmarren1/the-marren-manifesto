@@ -5,6 +5,7 @@
 Name: time-logger
 
 Version:
+    v27
     v26
 
 Summary:
@@ -21,6 +22,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
+    August 07, 2024
     August 07, 2024
 """
 

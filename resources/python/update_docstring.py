@@ -20,6 +20,7 @@ Requires:
 Date Last Modified:
     August 07, 2024
     August 07, 2024
+    August 07, 2024
 """
 
 import sys
@@ -28,45 +29,64 @@ from datetime import datetime
 import os
 
 
-def update_docstring(file_path: str, version: str, date: str) -> None:
+def get_next_version(version: str) -> str:
     """
-    Update the version and 'Date Last Modified' fields in the docstring of a given file.
+    Increment the version number in '0.0.0' format.
+
+    Args:
+        version (str): Current version string.
+
+    Returns:
+        str: Next version string.
+    """
+    major, minor, patch = map(int, version.split("."))
+    if patch < 9:
+        patch += 1
+    elif minor < 9:
+        patch = 0
+        minor += 1
+    else:
+        patch = 0
+        minor = 0
+        major += 1
+    return f"{major}.{minor}.{patch}"
+
+
+def update_docstring(file_path: str) -> None:
+    """
+    Update the version and date in the docstring of the specified file.
 
     Args:
         file_path (str): Path to the Python file to update.
-        version (str): New version string to be set in the docstring.
-        date (str): New date string to be set in the docstring.
-
-    Returns:
-        None: This function does not return any value. It writes the changes directly
-              to the specified file.
     """
-    if file_path == os.path.abspath(__file__):
-        print(f"Skipping update for script itself: {file_path}")
-        return
-
     with open(file_path, "r") as file:
         content = file.read()
 
-    # Define regex patterns for version and date
-    version_pattern = r"Version:\s*\n"
-    date_pattern = r"Date Last Modified:\s*\n"
+    # Update the version number
+    version_pattern = r"Version:\s*(\d+\.\d+\.\d+)"
+    date_pattern = r"Date Last Modified:\s*(.*)"
 
-    # Update version and date
-    content = re.sub(version_pattern, f"Version:\n    {version}\n", content)
-    content = re.sub(date_pattern, f"Date Last Modified:\n    {date}\n", content)
+    current_version = re.search(version_pattern, content)
+    current_date = re.search(date_pattern, content)
+
+    if not current_version or not current_date:
+        print(f"Version or Date Last Modified not found in {file_path}")
+        return
+
+    new_version = get_next_version(current_version.group(1))
+    new_date = datetime.datetime.now().strftime("%B %d, %Y")
+
+    new_content = re.sub(version_pattern, f"Version: {new_version}", content)
+    new_content = re.sub(date_pattern, f"Date Last Modified: {new_date}", new_content)
 
     with open(file_path, "w") as file:
-        file.write(content)
+        file.write(new_content)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: update_docstring.py <file_path> <version> <date>")
+    if len(sys.argv) != 2:
+        print("Usage: update_docstring.py <file_path>")
         sys.exit(1)
 
     file_path = sys.argv[1]
-    version = sys.argv[2]
-    date = sys.argv[3]
-
-    update_docstring(file_path, version, date)
+    update_docstring(file_path)
