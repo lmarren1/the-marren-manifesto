@@ -39,12 +39,13 @@ def update_version(content: str) -> str:
     Returns:
         str: The updated content with the new version.
     """
+    # Pattern to match "Version:" followed by a newline and a tab
     version_pattern = re.compile(r"(Version:\s*\n\s*)\d+\.\d+\.\d+")
     version_match = version_pattern.search(content)
 
     if version_match:
         # Extract current version and increment it
-        current_version = version_match.group().strip().split(" ")[-1]
+        current_version = version_match.group().strip().split("\n\t")[-1]
         major, minor, patch = map(int, current_version.split("."))
         patch += 1
         if patch > 9:
