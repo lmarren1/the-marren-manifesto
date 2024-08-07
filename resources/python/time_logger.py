@@ -4,7 +4,8 @@
 """
 Name: time-logger
 
-Version: 
+Version:
+    v26
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -20,7 +21,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-    August 6, 2024
+    August 07, 2024
 """
 
 import datetime as dt
