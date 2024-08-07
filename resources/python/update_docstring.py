@@ -4,7 +4,7 @@
 """
 Name: update-version-and-date
 
-Version: v25
+Version: 0.0.1
 
 Summary:
     This script updates the version portion of the doctring of the Python files whenever commits are made.
@@ -19,8 +19,6 @@ Requires:
 
 Date Last Modified:
     August 07, 2024
-    August 07, 2024
-    August 07, 2024
 """
 
 import sys
@@ -29,64 +27,77 @@ from datetime import datetime
 import os
 
 
-def get_next_version(version: str) -> str:
+def update_version(content: str) -> str:
     """
-    Increment the version number in '0.0.0' format.
+    Update the version number in the docstring.
 
     Args:
-        version (str): Current version string.
+        content (str): The content of the file as a string.
 
     Returns:
-        str: Next version string.
+        str: The updated content with the new version.
     """
-    major, minor, patch = map(int, version.split("."))
-    if patch < 9:
+    version_pattern = re.compile(r"(Version:\s*)\d+\.\d+\.\d+")
+    version_match = version_pattern.search(content)
+
+    if version_match:
+        # Extract current version and increment it
+        current_version = version_match.group().strip().split(" ")[-1]
+        major, minor, patch = map(int, current_version.split("."))
         patch += 1
-    elif minor < 9:
-        patch = 0
-        minor += 1
-    else:
-        patch = 0
-        minor = 0
-        major += 1
-    return f"{major}.{minor}.{patch}"
+        if patch > 9:
+            patch = 0
+            minor += 1
+        if minor > 9:
+            minor = 0
+            major += 1
+        new_version = f"{major}.{minor}.{patch}"
+        content = version_pattern.sub(f"Version: {new_version}", content)
+
+    return content
 
 
-def update_docstring(file_path: str) -> None:
+def update_date(content: str) -> str:
     """
-    Update the version and date in the docstring of the specified file.
+    Update the date in the docstring.
 
     Args:
-        file_path (str): Path to the Python file to update.
+        content (str): The content of the file as a string.
+
+    Returns:
+        str: The updated content with the new date.
     """
+    date_pattern = re.compile(r"(Date Last Modified:\s*)\w+ \d{2}, \d{4}")
+    current_date = datetime.now().strftime("%B %d, %Y")
+    content = date_pattern.sub(f"Date Last Modified: {current_date}", content)
+
+    return content
+
+
+def update_version_and_date(file_path: str) -> None:
+    """
+    Updates the version and date in the docstring of the given Python file.
+
+    Args:
+        file_path (str): The path to the Python file to update.
+    """
+    # Read the file content
     with open(file_path, "r") as file:
         content = file.read()
 
-    # Update the version number
-    version_pattern = r"Version:\s*(\d+\.\d+\.\d+)"
-    date_pattern = r"Date Last Modified:\s*(.*)"
+    # Update version and date
+    content = update_version(content)
+    content = update_date(content)
 
-    current_version = re.search(version_pattern, content)
-    current_date = re.search(date_pattern, content)
-
-    if not current_version or not current_date:
-        print(f"Version or Date Last Modified not found in {file_path}")
-        return
-
-    new_version = get_next_version(current_version.group(1))
-    new_date = datetime.datetime.now().strftime("%B %d, %Y")
-
-    new_content = re.sub(version_pattern, f"Version: {new_version}", content)
-    new_content = re.sub(date_pattern, f"Date Last Modified: {new_date}", new_content)
-
+    # Write the updated content back to the file
     with open(file_path, "w") as file:
-        file.write(new_content)
+        file.write(content)
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: update_docstring.py <file_path>")
+        print("Usage: python update_docstring.py <file_path>")
         sys.exit(1)
 
     file_path = sys.argv[1]
-    update_docstring(file_path)
+    update_version_and_date(file_path)
