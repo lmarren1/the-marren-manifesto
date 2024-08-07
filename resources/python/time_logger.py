@@ -4,7 +4,8 @@
 """
 Name: time_logger
 
-Version: 0.0.4
+Version:
+	0.0.5
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -19,7 +20,8 @@ License: MIT
 Requires:
     datetime, os, csv, typing
 
-Date Last Modified: August 07, 2024
+Date Last Modified:
+	August 07, 2024
 """
 
 import datetime as dt
@@ -55,12 +57,12 @@ def get_csv_value(file_path: str, row: int, col: int) -> Optional[Any]:
     """
     Get a CSV value based on given row and column indices.
 
-    Args: 
+    Args:
         file_path (string): file path to CSV.
         row (int): index of desired row.
         col (int): index of desired column.
 
-    Returns: 
+    Returns:
         Optional[Any]: a single CSV value or None if the CSV is empty or indices are out of range.
     """
     try:
@@ -95,10 +97,10 @@ def check_time_format(time: str) -> str:
     """
     Reprompt user if time format isn't %H:%M.
 
-    Args: 
+    Args:
         time (str): a potentially variable-length string that may or may not adhere to %H:%M format.
 
-    Returns: 
+    Returns:
         str: a 5-character string in %H:%M format.
     """
     try:
@@ -113,10 +115,10 @@ def check_date_format(date: str) -> str:
     """
     Reprompt user if date format isn't %m-%d-%y.
 
-    Args: 
+    Args:
         date (str): a potentially variable-length string that may or may not adhere to %m-%d-%y format.
 
-    Returns: 
+    Returns:
         str: an 8-character string in %m-%d-%y format.
     """
     try:
@@ -131,10 +133,10 @@ def check_rating_scale(rating: int) -> int:
     """
     Reprompt user if rating is outside of 1-5 range.
 
-    Args: 
+    Args:
         rating (int): an integer used to rate levels of motivation, stress, and focus.
 
-    Returns: 
+    Returns:
         int: a 1-character integer value between 1 and 5, inclusive.
     """
     try:
@@ -154,12 +156,12 @@ def calculate_time_difference(
     """
     Calculate the minute difference between two pre-formated times.
 
-    Args: 
+    Args:
         time1 (str): a pre-formated 5-character string representing the first of the 2 time stamps in "%H:%M" format.
         time2 (str): a pre-formated 5-character string representing the second of 2 time stamps in "%H:%M" format.
         time_format (str): the datetime format to be applied to both timestamps; has default value of %H:%M.
 
-    Returns: 
+    Returns:
         int: the minute difference between the two timestamps.
     """
     # Parse the time strings into datetime objects
@@ -219,7 +221,7 @@ def get_user_input() -> dict[str, Any]:
     """
     Prompt the user for input and return a dictionary with said input.
 
-    Return: 
+    Return:
         dict[str, Any]: a dictionary of the user's prompt responses, which are strings and integers.
     """
 
@@ -262,7 +264,7 @@ def write_csv(file_path: str, entry: list[Any]) -> None:
     """
     Write to existing CSV.
 
-    Args: 
+    Args:
         file_path (str): a string representing the CSV's file path.
     """
     with open(file_path, "a", newline="") as file:

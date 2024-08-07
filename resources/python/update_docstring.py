@@ -52,7 +52,7 @@ def update_version(content: str) -> str:
             minor = 0
             major += 1
         new_version = f"{major}.{minor}.{patch}"
-        content = version_pattern.sub(f"Version: {new_version}", content)
+        content = version_pattern.sub(f"Version:\n\t{new_version}", content)
 
     return content
 
@@ -69,7 +69,7 @@ def update_date(content: str) -> str:
     """
     date_pattern = re.compile(r"(Date Last Modified:\s*\n\s*)\w+ \d{2}, \d{4}")
     current_date = datetime.now().strftime("%B %d, %Y")
-    content = date_pattern.sub(f"Date Last Modified: {current_date}", content)
+    content = date_pattern.sub(f"Date Last Modified:\n\t{current_date}", content)
 
     return content
 
