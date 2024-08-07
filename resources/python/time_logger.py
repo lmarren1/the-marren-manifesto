@@ -40,7 +40,7 @@ def check_file_exists(file_path: str) -> None:
         file_path (string): file path to CSV.
     """
     if not os.path.exists(file_path):
-        # Always add newline='' to ensure no line skipping on appending to file
+        # Always add newline='' to ensure no line skipping on appending to file.
         with open(file_path, "a", newline="") as file:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(
