@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: update_docstring
+Name: 
+    update_docstring
 
 Version: 
     0.0.1
@@ -13,7 +14,8 @@ Summary:
 Author:
     Luke Marren
 
-License: MIT    
+License: 
+    MIT    
 
 Requires:
     re, sys, datetime

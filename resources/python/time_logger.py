@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: time_logger
+Name: 
+    time_logger
 
 Version:
 	0.0.5
@@ -15,7 +16,8 @@ Summary:
 Author:
     Luke Marren
 
-License: MIT    
+License:
+    MIT    
 
 Requires:
     datetime, os, csv, typing

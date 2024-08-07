@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: plotly_graph
+Name: 
+    plotly_graph
 
 Version:
 	0.0.2
@@ -13,9 +14,11 @@ Summary:
 Author:
     Luke Marren
 
-License: MIT
+License: 
+    MIT
 
 Requires:
+    N/A
 
 Date Last Modified:
 	August 07, 2024

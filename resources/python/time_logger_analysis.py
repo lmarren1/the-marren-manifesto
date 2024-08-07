@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Name: time_logger_analysis
+Name: 
+    time_logger_analysis
 
 Version:
 	0.0.5
@@ -13,9 +14,11 @@ Summary:
 Author:
     Luke Marren
 
-License: MIT
+License: 
+    MIT
 
 Requires:
+    N/A
 
 Date Last Modified:
 	August 07, 2024
