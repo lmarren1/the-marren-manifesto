@@ -6,7 +6,7 @@ Name:
     time_logger
 
 Version:
-	0.0.7
+	0.0.8
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -23,7 +23,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-	August 07, 2024
+	August 08, 2024
 """
 
 import datetime as dt
@@ -45,6 +45,7 @@ def check_file_exists(file_path: str) -> None:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(
                 [
+                    "UID",
                     "start_time",
                     "end_time",
                     "motivation_level",
@@ -182,43 +183,6 @@ def calculate_time_difference(
     return difference_in_minutes
 
 
-# def count_session_number(file_path):
-#     '''Count number of sessions had in a given day based on entries in the day's CSV.'''
-#     count = 0
-#     with open(file_path, 'r') as file:
-#         for row in file:
-#             count += 1
-#     return count
-
-# def get_cumulative_hours_worked(directory, date):
-#     '''Sort through data directory to get the last cumulative hours worked number logged.'''
-
-#     # List all CSV files in the directory
-#     files = [f for f in os.listdir(directory) if f.endswith('.csv')]
-
-#     # Extract dates from filenames and filter based on the provided date
-#     file_dates = []
-#     for file in files:
-#         file_date = dt.datetime.strptime(file.replace('.csv', ''), '%m-%d-%y')
-#         input_date = dt.datetime.strptime(date, '%m-%d-%y')
-#         if file_date <= input_date:
-#             file_dates.append(file_date)
-
-#     if not file_dates:
-#         print('Warning: no CSVs found before the provided date.')
-#         return 0
-
-#     # Find the latest file based on date
-#     latest_date = max(file_dates)
-#     latest_file = latest_date.strftime('%m-%d-%y') + '.csv'
-
-#     # Construct the full path to the latest CSV file
-#     latest_file_path = os.path.join(directory, latest_file)
-
-#     # Return last cumulative hours worked logged
-#     return float(get_csv_value(latest_file_path, -1, -1))
-
-
 def get_user_input() -> dict[str, Any]:
     """
     Prompt the user for input and return a dictionary with said input.
@@ -231,6 +195,7 @@ def get_user_input() -> dict[str, Any]:
     date = check_date_format(input("What is the date you worked? (MM-DD-YY): "))
     start_time = check_time_format(input("When did you START working? (HH-MM) "))
     end_time = check_time_format(input("When did you STOP working? (HH:MM) "))
+    uid = date.replace("-", "") + start_time.replace(":", "")
     motivation_level = check_rating_scale(
         int(input("How motivated were you during this session? (1-5) "))
     )
@@ -252,6 +217,7 @@ def get_user_input() -> dict[str, Any]:
     return {
         "file path": file_path,
         "entry": [
+            uid,
             start_time,
             end_time,
             motivation_level,
