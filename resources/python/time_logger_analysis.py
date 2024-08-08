@@ -6,7 +6,7 @@ Name:
     time_logger_analysis
 
 Version:
-	0.0.6
+	0.0.7
 
 Summary:
     This script produces summary statistical analysis on the CSV files produced for the 10k mastery tracker project.
@@ -18,7 +18,7 @@ License:
     MIT
 
 Requires:
-    N/A
+    pandas
 
 Date Last Modified:
 	August 08, 2024
@@ -27,10 +27,40 @@ Date Last Modified:
 import pandas as pd
 
 
+def load_data():
+    pass
+
+
+def clean_data():
+    pass
+
+
+def explore_data():
+    pass
+
+
+def analyze_data():
+    pass
+
+
+def transform_data():
+    pass
+
+
+def visualize_data():
+    pass
+
+
 def main() -> None:
     """
     Main function to generate analysis variables and their respective summary statistics.
     """
+    load_data()
+    clean_data()
+    explore_data()
+    analyze_data()
+    transform_data()
+    visualize_data()
 
 
 if __name__ == "__main__":
@@ -50,9 +80,4 @@ if __name__ == "__main__":
 # create descriptive statistic df
 
 # start with raw data df
-# load data
-# clean data
-# explore data
-# analyze data
-# transform data
-# visualize data
+
