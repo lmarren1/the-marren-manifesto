@@ -6,7 +6,7 @@ Name:
     time_logger
 
 Version:
-	0.0.8
+	0.0.9
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -187,7 +187,7 @@ def get_user_input() -> dict[str, Any]:
     """
     Prompt the user for input and return a dictionary with said input.
 
-    Return:
+    Returns:
         dict[str, Any]: a dictionary of the user's prompt responses, which are strings and integers.
     """
 
