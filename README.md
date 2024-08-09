@@ -1,7 +1,7 @@
 # Mastery Tracker
 
 ## Purpose
-Before I turn 30 years old, I want to complete **_10,000 hours_** of focused study/practice in computer science and engineering.
+Before I turn 30 years old, I want to complete **_10,000 hours_** of focused study/practice in computer programming.
 
 ## Motivation
 ### What it Comes Down to 
