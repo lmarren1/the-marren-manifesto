@@ -25,6 +25,7 @@ For as lofty as completing the 10,000 hours before 30 is, my goals are even broa
 
 I have wide-ranging interests that I'd like to connect through software. These include:
 - Tennis & Basketball
+- Physical Fitness
 - Math & Physics
 - Electronics
 - Languages
