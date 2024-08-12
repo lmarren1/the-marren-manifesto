@@ -6,10 +6,10 @@ Name:
     load_data
 
 Version:
-	0.0.9
+	0.1.0
 
 Summary:
-    This script produces summary statistical analysis on the CSV files produced for the 10k mastery tracker project.
+    This script loads in and produces summary analysis on the data produced for the 10k mastery tracker project.
 
 Author:
     Luke Marren
@@ -21,7 +21,7 @@ Requires:
     os, pandas
 
 Date Last Modified:
-	August 10, 2024
+	August 12, 2024
 """
 
 import os
