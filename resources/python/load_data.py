@@ -6,7 +6,7 @@ Name:
     load_data
 
 Version:
-	0.1.0
+	0.1.1
 
 Summary:
     This script loads in and produces summary analysis on the data produced for the 10k mastery tracker project.
@@ -28,7 +28,7 @@ import os
 import pandas as pd
 
 
-def csvs_to_df(directory_path: str = "resources/data") -> pd.DataFrame:
+def csvs_to_df(directory_path: str = "../../resources/data") -> pd.DataFrame:
     """
     Read all CSVs in given directory into a combined pandas dataframe.
 
