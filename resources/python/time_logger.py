@@ -6,7 +6,7 @@ Name:
     time_logger
 
 Version:
-	0.0.9
+	0.1.0
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -23,7 +23,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-	August 08, 2024
+	August 12, 2024
 """
 
 import datetime as dt
@@ -45,7 +45,8 @@ def check_file_exists(file_path: str) -> None:
             writer = csv.writer(file, delimiter=",")
             writer.writerow(
                 [
-                    "UID",
+                    "date",
+                    "session_id",
                     "start_time",
                     "end_time",
                     "motivation_level",
@@ -108,6 +109,7 @@ def check_time_format(time: str) -> str:
     """
     try:
         dt.datetime.strptime(time, "%H:%M")
+        time = time.zfill(5)
         return time
     except ValueError:
         new_time = input("Incorrect time format. Try again (HH:MM). ")
@@ -195,7 +197,7 @@ def get_user_input() -> dict[str, Any]:
     date = check_date_format(input("What is the date you worked? (MM-DD-YY): "))
     start_time = check_time_format(input("When did you START working? (HH-MM) "))
     end_time = check_time_format(input("When did you STOP working? (HH:MM) "))
-    uid = date.replace("-", "") + start_time.replace(":", "")
+    session_id = date.replace("-", "") + start_time.replace(":", "")
     motivation_level = check_rating_scale(
         int(input("How motivated were you during this session? (1-5) "))
     )
@@ -217,7 +219,8 @@ def get_user_input() -> dict[str, Any]:
     return {
         "file path": file_path,
         "entry": [
-            uid,
+            date,
+            session_id,
             start_time,
             end_time,
             motivation_level,
