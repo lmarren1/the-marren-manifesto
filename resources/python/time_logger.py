@@ -6,7 +6,7 @@ Name:
     time_logger
 
 Version:
-	0.1.0
+	0.1.1
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -23,7 +23,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-	August 12, 2024
+	August 13, 2024
 """
 
 import datetime as dt
@@ -212,7 +212,7 @@ def get_user_input() -> dict[str, Any]:
     print("Data collection was successful.")
     minutes_worked = calculate_time_difference(start_time, end_time)
 
-    file_path = f"resources/data/{date}.csv"
+    file_path = f"resources/data/minutes.csv"
     check_file_exists(file_path)
 
     # Return the session entry.
@@ -231,7 +231,7 @@ def get_user_input() -> dict[str, Any]:
     }
 
 
-def write_csv(file_path: str, entry: list[Any]) -> None:
+def append_csv(file_path: str, entry: list[Any]) -> None:
     """
     Write to existing CSV.
 
@@ -248,7 +248,7 @@ def main() -> None:
     Main function to prompt user for input and add a work entry.
     """
     user_input = get_user_input()
-    write_csv(user_input["file path"], user_input["entry"])
+    append_csv(user_input["file path"], user_input["entry"])
 
 
 if __name__ == "__main__":
