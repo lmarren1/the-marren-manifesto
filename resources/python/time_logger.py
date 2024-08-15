@@ -6,12 +6,12 @@ Name:
     time_logger
 
 Version:
-	0.1.1
+	0.1.2
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
-    It generates a CSV file to log such progress for a specific day if none already exists.
-    Otherwise, it will add a work session entry to the day's CSV.
+    It generates a CSV file to log such progress if none already exists.
+    Otherwise, it will add a work session entry to said CSV.
 
 Author:
     Luke Marren
@@ -23,7 +23,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-	August 13, 2024
+	August 14, 2024
 """
 
 import datetime as dt
@@ -233,7 +233,7 @@ def get_user_input() -> dict[str, Any]:
 
 def append_csv(file_path: str, entry: list[Any]) -> None:
     """
-    Write to existing CSV.
+    Append data to an existing CSV.
 
     Args:
         file_path (str): a string representing the CSV's file path.
