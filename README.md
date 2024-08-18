@@ -31,6 +31,7 @@ I have wide-ranging interests that I'd like to connect through software. These i
 - Languages
 - Travelling
 - Piano
+- Aviation
 
 By completing projects in these domains and continually improving myself as a developer, I believe I will ultimately make tangible use of a passion I've refined. And beyond that, maybe I'll be able to help others out and meet new people along the way!
 
@@ -50,17 +51,17 @@ Specifically, I would like to:
 ### From Start to Finish 
 From my official 'lock-in' date of September 1st, 2024 to my 30th birthday, there are:
 
-- 9.7 years
+- 8.7 years
 - 105 months
-- 507 weeks
-- 3,546 days
+- 458 weeks
+- 3,209 days
 
 Breaking that down by hours, you get:
 
 | | Year | Month | Week | Day
 :---: | :---: | :---: | :---: | :---:
-| **Totals** | 9.7 | 105 | 507 | 3,546
-| **Hours Per** | 1,032 | 85.8 | 19.74 | 2.82
+| **Totals** | 8.7 | 105 | 458 | 3,209
+| **Hours Per** | 1,138 | 95 | 21.8 | 3.12
 
 So already, this seems pretty doable (sarcasm doesn't translate well to Markdown).
 
@@ -69,7 +70,7 @@ Given the constraints of school and work, I will have to manage my time wisely! 
 
 Weekdays | Weekends | Total
 :---: | :---: | :---:
-2.5 hours/day | 4 hours/day | 20.5 hours/week
+2 hours/day | 6 hours/day | 22 hours/week
 
 Hopefully I'll  be able to devote more time on some days towards this weekly total so I can have some buffer room for busier days.
 
