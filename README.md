@@ -1,7 +1,7 @@
 # Mastery Tracker
 
 ## Purpose
-Before I turn 30 years old, I want to complete **_10,000 hours_** of focused study/practice in computer programming.
+Before I turn 35 years old, I want to complete **_10,000 hours_** of focused study/practice in computer programming.
 
 ## Motivation
 ### What it Comes Down to 
@@ -21,7 +21,7 @@ So why continue to sit around dreaming of a better life for myself when I can cr
 
 ## Goals
 ### General Overview
-For as lofty as completing the 10,000 hours before 30 is, my goals are even broader.
+For as lofty as completing the 10,000 hours before 35 is, my goals are even broader.
 
 I have wide-ranging interests that I'd like to connect through software. These include:
 - Tennis & Basketball
@@ -60,17 +60,17 @@ Breaking that down by hours, you get:
 
 | | Year | Month | Week | Day
 :---: | :---: | :---: | :---: | :---:
-| **Totals** | 8.7 | 105 | 458 | 3,209
-| **Hours Per** | 1,138 | 95 | 21.8 | 3.12
+| **Totals** | 13.7 | 165 | 719 | 5,035
+| **Hours Per** | 730 | 61 | 14 | 2
 
-So already, this seems pretty doable (sarcasm doesn't translate well to Markdown).
+So already, this seems pretty doable.
 
 ### In the Day-to-Day 
 Given the constraints of school and work, I will have to manage my time wisely! As such, I'll be adopting the following weekly schedule:
 
 Weekdays | Weekends | Total
 :---: | :---: | :---:
-2 hours/day | 6 hours/day | 22 hours/week
+2 hours/day | 3 hours/day | 16 hours/week
 
 Hopefully I'll  be able to devote more time on some days towards this weekly total so I can have some buffer room for busier days.
 
