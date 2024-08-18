@@ -8,14 +8,13 @@ Before I turn 35 years old, I want to complete **_10,000 hours_** of focused stu
 I want to master the craft of developing software. 
 
 ### Background
-At the time I'm writing this, I am a rising senior econometrics student at the University of Illinois Urbana-Champaign. I have a **mediocre 3.3 GPA** and have received a **B-** and a **D** in the last two computer science courses 
-I've taken.
+At the time I'm writing this, I am a rising senior econometrics student at the University of Illinois Urbana-Champaign. I have a **3.3 GPA** and have received a **B-** and a **D** in the last two computer science courses I've taken.
 
 So what the *heck* makes me think I can take on this enormous journey and why do I even want to?
 
-Well, here's the short of it. Although I have little to show for my quantitative capabilities *right now*, I know I can achieve immense growth and success in engineering as a practice and an intellectual pursuit. 
+Well, here's the short of it. Although I have little to show for my quantitative capabilities *right now*, I know I can achieve immense growth in engineering as a practice and an intellectual pursuit. 
 
-In particular, I have a passion for creating software. I think dedicating myself to this discipline will be transformative for me, and not just as a programmer. I see it as a way to construct a beautiful life for myself by fusing my interests into a life-long career.
+In particular, I have a passion for creating software. I believe dedicating myself to this discipline will be transformative for me, and not just as a programmer. I see it as a way to construct a beautiful life for myself by fusing my interests into a life-long career.
 
 So why continue to sit around dreaming of a better life for myself when I can create it on my own laptop? I have work to do, and lots of it!
 
@@ -49,12 +48,12 @@ Specifically, I would like to:
 
 ## Timeline Breakdown 
 ### From Start to Finish 
-From my official 'lock-in' date of September 1st, 2024 to my 30th birthday, there are:
+From my official 'lock-in' date of September 1st, 2024 to my 35th birthday, there are:
 
-- 8.7 years
-- 105 months
-- 458 weeks
-- 3,209 days
+- 13.7 years
+- 165 months
+- 719 weeks
+- 5,035 days
 
 Breaking that down by hours, you get:
 
