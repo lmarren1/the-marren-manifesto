@@ -15,8 +15,16 @@ Well, here's the short of it:
 I have a passion for creating software. I believe dedicating myself to this discipline will be transformative for me, and not just as a programmer. I see it as a way to construct a beautiful life for myself by fusing my interests into a life-long career.
 
 ## Goals
-### General Overview
-For as lofty as completing the 10,000 hours before 35 is, my goals are even broader.
+### Overarching Goals
+1. Achieve 10,000 hours of focused study/practice in developing software.
+
+2. Create software for each one of my interests.
+
+### Connecting My Interests Through Software
+
+>"When I was a kid, I thought that if I could find a way to combine physics with New Mexico, my life would be perfect."
+
+<p>&#150 Cillian Murphy in <em>Oppenheimer</em>
 
 I have wide-ranging interests that I'd like to connect through software. These include:
 - Tennis & Basketball
