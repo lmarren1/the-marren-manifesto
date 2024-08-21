@@ -1,21 +1,27 @@
+/* Apply box-sizing and font styles globally */
 * {
     box-sizing: border-box;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Fira Code', 'Courier New', monospace;
     color: white;
 }
 
+/* Set basic styles for html and body */
 html, body {
     margin: 0;
     padding: 0;
-    background-color: rgba(0, 47, 76);
+    background-color: rgba(0, 47, 76, 1);
 }
 
+/* Remove underline from links */
 a {
     text-decoration: none;
 }
 
+/* Basic styles for navigation */
 .nav ul {
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav li {
@@ -29,6 +35,11 @@ a {
     border: none;
 }
 
+.nav a:hover {
+    background-color: rgba(51, 51, 51, 0.5);
+}
+
+/* Main navigation styles */
 .main-nav {
     text-align: center;
     font-size: 1.5em;
@@ -40,10 +51,7 @@ a {
     padding: 0;
 }
 
-.nav a:hover{
-    background-color: rgba(51, 51, 51, 0.5);
-}
-
+/* Header background styling */
 .header-background {
     background-color: rgba(0, 47, 76, 0.5);
     background-blend-mode: multiply;
@@ -52,15 +60,17 @@ a {
     padding-bottom: 25px;
 }
 
+/* Default header background image */
 .default-header {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Ascending_Towards_Oblivion_%28Unsplash%29.jpg');
 }
 
-.blog-name {
+/* Blog name and titles styling */
+.blog-name, .about-title, .blog-homepage-title {
     text-align: center;
     margin: 0;
     font-weight: normal;
-    color: rgba(255, 111, 97);
+    color: rgba(255, 111, 97, 1);
 }
 
 .title-blog-name {
@@ -68,41 +78,37 @@ a {
 }
 
 .about-title {
-    text-align: center;
-    margin: 0;
-    font-weight: normal;
-    color: rgba(255, 111, 97);
     font-size: 7em;
 }
 
 .blog-homepage-title {
-    text-align: center;
-    margin: 0;
-    color: rgba(255, 111, 97);
     font-size: 13em;
-    font-weight: normal;
 }
 
+/* Content section styling */
 .content-section {
     margin: 1em;
 }
 
+/* Container for responsive layout */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5em;
 }
 
+/* Section header styling */
 .section-header {
     font-size: 2.5em;
     font-weight: normal;
     text-align: center;
 }
 
+/* Footer styling */
 .main-footer {
-    background-color: rgba(51, 51, 51);
+    background-color: rgba(51, 51, 51, 1);
     color: white;
-    padding: .25em 0;
+    padding: 0.25em 0;
 }
 
 .main-footer-container {
@@ -124,6 +130,7 @@ a {
     height: 50px;
 }
 
+/* Reader engagement list styling */
 .ul-reader-engagement {
     display: inline-block;
     text-align: left;
@@ -134,12 +141,50 @@ a {
     list-style-type: circle;
 }
 
+/* Centered content styling */
 .centered-content {
     text-align: center;
 }
 
+/* Matplotlib graph styling */
 .matplotlib-graph {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
     padding-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav li {
+        display: block;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    .main-nav {
+        font-size: 1.2em;
+    }
+
+    .container {
+        padding: 0 1em;
+    }
+
+    .matplotlib-graph {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-name, .title-blog-name, .about-title, .blog-homepage-title {
+        font-size: 8em; /* Adjust as necessary */
+    }
+
+    .section-header {
+        font-size: 1.8em;
+    }
+}
+
+/* Focus styles for accessibility */
+a:focus {
+    outline: 2px solid rgba(255, 111, 97, 1);
 }
