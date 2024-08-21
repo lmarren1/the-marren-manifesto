@@ -44,31 +44,16 @@ a {
     background-color: rgba(51, 51, 51, 0.5);
 }
 
-.about-header {
+.header-background {
     background-color: rgba(0, 47, 76, 0.5);
-    background-image: url("../media/rocky-throwing-arms-up.jpg");
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     padding-bottom: 25px;
 }
 
-.index-header {
-    background-color: rgba(0, 47, 76, 0.5);
-    background-image: url("../media/nuit-nuit.jpg");
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 25px;
-}
-
-.blog-homepage-header {
-    background-color: rgba(0, 47, 76, 0.5);
-    background-image: url("../media/nadal-08.jpg");
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 25px;
+.default-header {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2a/Ascending_Towards_Oblivion_%28Unsplash%29.jpg');
 }
 
 .blog-name {
@@ -93,9 +78,9 @@ a {
 .blog-homepage-title {
     text-align: center;
     margin: 0;
-    font-weight: normal;
     color: rgba(255, 111, 97);
     font-size: 13em;
+    font-weight: normal;
 }
 
 .content-section {
