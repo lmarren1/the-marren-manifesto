@@ -1,115 +1,160 @@
-/* Reset default margin and padding for body and html */
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+
 html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    height: 100%; /* Ensure body and html take full height */
-}
-
-body {
-    text-align: center;
-    font-family: 'Fira Code', monospace; 
-    margin: 0;
-    padding: 0;
-    background-color: #002F4C;
-    color: #F4F4F4;
-}
-
-header {
-    text-align: center; /* Center text */
-    padding-top: 70px; /* Separate Header from Navbar */
-}
-
-h1 {
-    color:#FF6F61;
+    background-color: rgba(0, 47, 76);
 }
 
 a {
-    text-decoration: none; /* Removes link underline */
-    color: #F4F4F4;
-    padding: 15px;
-    border-radius: 5px;
+    text-decoration: none;
 }
 
-.navbar {
-    margin-top: 0;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%; 
-    background-color: #333; 
-    z-index: 1000; /* Ensure it stays on top */
-    padding: 10px 0; 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    box-sizing: border-box; /* Include padding and border in the width */    
-}
-
-a:hover {
-    background-color: #FF6F61;
-    transition: background-color 0.3s;
-}
-
-a:visited {
-    color: grey;        
-}
-
-a:active {
-    color: #002F4C;       
-}
-
-footer {
-    background-color: #333; /* Charcoal background for footer */
-    padding: 15px;       
-    position: relative; /* Fix the footer at the bottom */
-    width: 100%;
+.nav ul {
     margin: 0;
 }
 
-footer a {
-    color: #007BFF; /* Link color */
-    text-decoration: none; /* Remove underline */
+.nav li {
+    display: inline;
 }
 
-footer a:hover {
-    text-decoration: underline; /* Underline on hover */
-    background-color: transparent;
+.nav a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+    border: none;
 }
 
-img {
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    max-width: 400px;
-    max-height: 300px;
+.main-nav {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: lighter;
+    border-bottom: 1px solid white;
 }
 
-.image:hover {
-    background-color: transparent;
-    transition: none;
+.main-nav li {
+    padding: 0;
 }
 
-article {
-    scroll-margin-top: 80px; /* Prevents intra-page links from being hidden by main navbar */
+.nav a:hover{
+    background-color: rgba(51, 51, 51, 0.5);
 }
 
-article p {
+.about-header {
+    background-color: rgba(0, 47, 76, 0.5);
+    background-image: url("/../resources/media/rocky-throwing-arms-up.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 25px;
+}
+
+.index-header {
+    background-color: rgba(0, 47, 76, 0.5);
+    background-image: url("/../resources/media/nuit-nuit.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 25px;
+}
+
+.blog-homepage-header {
+    background-color: rgba(0, 47, 76, 0.5);
+    background-image: url("/../resources/media/nadal-08.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 25px;
+}
+
+.blog-name {
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+    color: rgba(255, 111, 97);
+}
+
+.title-blog-name {
+    font-size: 13em;
+}
+
+.about-title {
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+    color: rgba(255, 111, 97);
+    font-size: 7em;
+}
+
+.blog-homepage-title {
+    text-align: center;
+    margin: 0;
+    font-weight: normal;
+    color: rgba(255, 111, 97);
+    font-size: 13em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-size: 2.5em;
+    font-weight: normal;
+    text-align: center;
+}
+
+.main-footer {
+    background-color: rgba(51, 51, 51);
+    color: white;
+    padding: .25em 0;
+}
+
+.main-footer-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 0.5em;
+}
+
+.footer-nav img {
+    width: 50px;
+    height: 50px;
+}
+
+.ul-reader-engagement {
+    display: inline-block;
     text-align: left;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
-.color {
-    color: #00BFFF;
+.ul-reader-engagement li {
+    line-height: 2em;
+    list-style-type: circle;
 }
 
-.about-motivation {
-    justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
+.centered-content {
+    text-align: center;
 }
 
-.blog-post-list {
-    padding-bottom: 5%;
+.matplotlib-graph {
+    width: 600px;
+    height: 400px;
+    padding-bottom: 20px;
 }
