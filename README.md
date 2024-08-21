@@ -24,7 +24,7 @@ I have a passion for creating software. I believe dedicating myself to this disc
 
 >"When I was a kid, I thought that if I could find a way to combine physics with New Mexico, my life would be perfect."
 
-<p>&#150 Cillian Murphy in <em>Oppenheimer</em>
+<p>&#150 Cillian Murphy, <em>Oppenheimer</em>
 
 I have wide-ranging interests that I'd like to connect through software. These include:
 - Tennis & Basketball
