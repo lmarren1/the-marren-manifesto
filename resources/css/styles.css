@@ -46,7 +46,7 @@ a {
 
 .about-header {
     background-color: rgba(0, 47, 76, 0.5);
-    background-image: url("../media/rocky-throwing-arms-up.jpg");
+    background-image: url("../resources/media/rocky-throwing-arms-up.jpg");
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
