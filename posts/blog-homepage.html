@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Mastery Tracker Blog Homepage</title>
+    <title>The Marren Manifesto | Blog</title>
     <link href="../resources/css/styles.css" rel="stylesheet">
     <script src="../resources/js/script.js"></script>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FGWFXCGDC"></script>
     <script>
@@ -19,35 +19,61 @@
 
 <body>
     <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <menu class="navbar">
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="blog-homepage.html">Blog</a>
-                <a href="../contact.html">Contact</a>
-            </menu>
+    <header class="blog-homepage-header">
+        <nav class="nav main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="blog-homepage.html">Blog</a></li>
+            </ul>
         </nav>
-        <h1>Blog Homepage</h1>
+        <h1 class="blog-homepage-title">My Blog</h1>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <section>
-            <h2>Latest Post</h2>
-            <a href="8-11-24.html">Week of <time id="latest-post"></time></a>
+    <main class="content-section container">
+        <section class="centered-content">
+            <h2 class="section-header">Latest Post</h2>
+            <p>Coming August 22nd!</p>
         </section>
 
-        <section class="blog-post-list">
-            <h2>All Posts</h2>
-            <a href="8-11-24.html">8-11-24</a>
-            <a href="8-4-24.html">8-4-24</a>
+        <section class="centered-content">
+            <h2 class="section-header">All Posts</h2>
+            <p>Coming August 22nd!</p>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
-        <p>Licensed under the MIT License. <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">Read the full license</a>.</p>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="blog-name">The Marren Manifesto</h3>
+
+            <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
+            <p>Licensed under the MIT License. <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">Read the full license</a>.</p>
+            <ul class="nav footer-nav">
+
+                <li>
+                    <a href= "https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a href= "https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page" target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/substack-logo.png" alt="My Substack" loading="lazy"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a href= "https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/github-logo.png" alt="My GitHub" loading="lazy"/>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
     </footer>
+
 </body>
 </html>
