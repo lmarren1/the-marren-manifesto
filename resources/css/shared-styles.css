@@ -1,0 +1,199 @@
+/* 
+    ============================================================
+    STYLISTIC NOTES - Luke Marren
+    ============================================================
+
+    - This stylesheet is divided into "OUTER STYLES" and "INNER
+    STYLES." 
+    
+    - I'm using the flexbox layout model to ensure responsive, 
+    evice-agnostic styling and efficient, maintainable code.
+
+    - See "main-pages.css" or "blog-posts.css" for more specific
+    style choices. 
+
+    The OUTER STYLES structure is as follows:
+
+        Combine semantic HTML body elements (i.e.: header,
+        main, footer) with flexboxes. 
+        
+        First, make the body a column-wise flexbox. Then make
+        the header, main, and footer separate flex-boxes.
+
+    The INNER STYLES structure is as follows:
+
+        Use view-width (vw) units to achieve responsive font
+        and padding (intra-element spacing). I use flexbox 
+        properties to handle inter-element spacing typically 
+        made by altering margins.
+        
+    ============================================================
+*/
+
+/* 
+    ============
+    OUTER STYLES
+    ============
+*/
+
+/* Apply global resets and box-sizing to encapsulate padding. */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Apply background and font styling to body.
+   A Column-wise flex-box is also used to structure the page content from top-to-bottom. */
+body {
+	background-color: rgba(0, 47, 76, 1);
+	color: white;
+	font-family: "Fira Code", "Courier New", monospace;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Used to make the page's header and main content/footer 2 flexboxes. */
+.main-header,
+main,
+footer {
+	display: flex;
+}
+
+/* Make main header and main content display in column-wise flexbox. */
+.main-header,
+main {
+	flex-direction: column;
+}
+
+/* Make main header take up entire vertical viewport. */
+.main-header {
+	height: 100vh;
+}
+
+/* Add margin around main content. */
+main,
+footer {
+	margin: clamp(1vw, 2vw, 3vw);
+}
+
+/* Make footer display content in row-wise flexbox. */
+footer {
+	flex-direction: row;
+}
+
+/* 
+    ============
+    INNER STYLES
+    ============
+*/
+
+/* Ensure font-weight is normal for all large font. */
+h1,
+h2,
+h3 {
+	font-weight: normal;
+}
+
+/* Apply coloring and font size to page titles. */
+h1 {
+	color: rgba(255, 111, 97, 1);
+	font-size: clamp(10vw, 13vw, 15vw);
+}
+
+/* Apply font size and padding to section titles. */
+h2 {
+	font-size: clamp(4vw, 7vw, 10vw);
+}
+
+/* Apply font size and padding to smaller header titles. */
+h3 {
+	font-size: clamp(3vw, 4vw, 5vw);
+}
+
+/* Apply font size to regular text. */
+p {
+	font-size: clamp(1vw, 2vw, 2.5vw);
+}
+
+/* Remove underline and color from links. */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+/* Ensure background image is behind text and is swallowed by scrolling. */
+.background-image {
+	position: absolute;
+	background-color: rgba(0, 47, 76, 0.5);
+	background-blend-mode: multiply;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+/* Use Earth from space image for blog homepage. */
+.blog-homepage.background-image {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/S65-63873_Clouds_over_the_Western_Pacific_and_the_full_Moon_seen_from_Earth.jpg");
+}
+
+/* Header navbar has border that spans entire header */
+.main-header nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 10%; /* Do not grow or shrink, fixed width of 10% */
+	border-bottom: 1px solid white;
+}
+
+/* Center header list horizontally, remove bullets */
+.main-header ul {
+	display: flex;
+	list-style-type: none;
+}
+
+/* Reactive bullet point padding and font size */
+.main-header li {
+	padding: clamp(1vw, 3vw, 5vw);
+	font-size: clamp(2vw, 3vw, 4vw);
+}
+
+/* Change main navbar background color on hover. */
+.main-header li:hover {
+	background-color: rgba(51, 51, 51, 0.5);
+}
+
+/* Put main header page title in flexbox and center contents (h1 element). */
+.main-header .page-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+/* Remove footer social media bullet points. */
+footer ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* Give footer social media images responsive dimesions. */
+footer img {
+	max-width: 20%;
+	height: auto;
+}
+
+/* Make main-content sections and their headers and articles flexboxes. */
+section,
+section > header,
+section > article,
+.flex-container {
+	display: flex;
+	flex-direction: column;
+    margin: clamp(1vw, 2vw, 3vw) 0;
+}

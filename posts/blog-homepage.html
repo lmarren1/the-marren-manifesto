@@ -2,79 +2,105 @@
 <html lang="en-US">
 
 <head>
+    <!-- Page Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Marren Manifesto | Blog</title>
-    <link href="../resources/css/styles.css" rel="stylesheet">
+    <link href="../resources/css/shared-styles.css" rel="stylesheet">
     <script src="../resources/js/script.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FGWFXCGDC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-8FGWFXCGDC');
     </script>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <header class="header-background" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/11/S65-63873_Clouds_over_the_Western_Pacific_and_the_full_Moon_seen_from_Earth.jpg);">
-        <nav class="nav main-nav">
+    <header class="main-header">
+
+        <!-- Page Header Background Image -->
+        <div class="background-image blog-homepage"></div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="main-nav">
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="blog-homepage.html">Blog</a></li>
             </ul>
         </nav>
-        <h1 class="blog-homepage-title">Welcome to My Blog</h1>
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <h1>Welcome to My Blog</h1>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="content-section container">
-        <section class="centered-content">
-            <h2 class="section-header">Latest Post</h2>
-            <p>Coming August 22nd!</p>
+    <main>
+        <section>
+            <header>
+                <h2>Blog Intro</h2>
+            </header>
+            <div class="flex-container">
+                <p>
+                    For now, kachow.
+                </p>
+            </div>
         </section>
 
-        <section class="centered-content">
-            <h2 class="section-header">All Posts</h2>
-            <p>Coming August 22nd!</p>
+        <section>
+            <header>
+                <h2>All Posts</h2>
+                <p>Coming August 22nd!</p>
+            </header>
+            <article>
+                <header>
+                    <h3>Post1</h3>
+                    <p>Date Written</p>
+                </header>
+                <a href="">
+                    <img src="" alt="insert post image here">
+                </a>
+                <p>
+                    Brief post summary
+                </p>
+            </article>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container main-footer-container">
-            <h3 class="blog-name">The Marren Manifesto</h3>
-
-            <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
-            <p>Licensed under the MIT License. <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">Read the full license</a>.</p>
-            <ul class="nav footer-nav">
-
+    <footer>
+        <p>The Marren Manifesto</p>
+        <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
+        <nav>
+            <ul>
                 <li>
-                    <a href= "https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank" rel="noopener noreferrer">
-                        <img src="../resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy"/>
+                    <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy" />
                     </a>
                 </li>
 
                 <li>
-                    <a href= "https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page" target="_blank" rel="noopener noreferrer">
-                        <img src="../resources/media/substack-logo.png" alt="My Substack" loading="lazy"/>
+                    <a href="https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/substack-logo.png" alt="My Substack" loading="lazy" />
                     </a>
                 </li>
 
                 <li>
-                    <a href= "https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
-                        <img src="../resources/media/github-logo.png" alt="My GitHub" loading="lazy"/>
+                    <a href="https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/github-logo.png" alt="My GitHub" loading="lazy" />
                     </a>
                 </li>
-
             </ul>
-        </div>
+        </nav>
     </footer>
-
 </body>
+
 </html>

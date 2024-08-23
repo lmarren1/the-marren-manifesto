@@ -1,5 +1,7 @@
 /* Apply box-sizing and font styles globally */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Fira Code', 'Courier New', monospace;
     color: white;
@@ -7,8 +9,6 @@
 
 /* Set basic styles for html and body */
 html, body {
-    margin: 0;
-    padding: 0;
     background-color: rgba(0, 47, 76, 1);
 }
 
@@ -17,38 +17,35 @@ a {
     text-decoration: none;
 }
 
-/* Basic styles for navigation */
-.nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.nav li {
-    display: inline;
-}
-
-.nav a {
-    display: inline-block;
-    padding: 0.5em 1em;
-    color: white;
-    border: none;
-}
-
-.nav a:hover {
-    background-color: rgba(51, 51, 51, 0.5);
-}
-
 /* Main navigation styles */
-.main-nav {
+nav {
     text-align: center;
     font-size: 1.5em;
     font-weight: lighter;
     border-bottom: 1px solid white;
 }
 
-.main-nav li {
+/* Basic styles for navigation */
+nav ul {
+    margin: 0;
     padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    padding: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: white;
+    border: none;
+}
+
+nav a:hover {
+    background-color: rgba(51, 51, 51, 0.5);
 }
 
 /* Header background styling */
@@ -92,9 +89,10 @@ a {
 
 /* Container for responsive layout */
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5em;
+    width: 90%;
+    max-width: 1200px;
+    margin: 1.5em auto;
+    padding: 2em;
 }
 
 /* Section header styling */
@@ -175,7 +173,7 @@ a {
         height: auto;
     }
 
-    .blog-name, .title-blog-name, .about-title, .blog-homepage-title {
+    .title-blog-name, .about-title, .blog-homepage-title {
         font-size: 8em; /* Adjust as necessary */
     }
 
