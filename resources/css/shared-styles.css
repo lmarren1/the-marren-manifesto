@@ -55,7 +55,7 @@ body {
 
 /* Add margin around main content. */
 .margin-all-around {
-	margin: clamp(1vw, 2vw, 3vw);
+	margin: clamp(1vw, 2vw, 3vw) clamp(2vw, 3vw, 4vw);
 }
 
 .margin-vertical {
@@ -143,8 +143,7 @@ a {
 	border-bottom: 1px solid white;
 }
 
-#main-header ul,
-footer ul {
+ul {
 	list-style-type: none;
 }
 
