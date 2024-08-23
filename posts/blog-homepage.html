@@ -5,6 +5,9 @@
     <!-- Page Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of the page's content">
+    <meta name="author" content="Luke Marren">
+    <meta name="robots" content="index, follow">
     <title>The Marren Manifesto | Blog</title>
     <link href="../resources/css/shared-styles.css" rel="stylesheet">
     <script src="../resources/js/script.js"></script>
@@ -19,15 +22,15 @@
     </script>
 </head>
 
-<body>
-    <header class="main-header">
+<body class="flex flex-column">
+    <header class="flex flex-column" id="main-header">
 
         <!-- Page Header Background Image -->
         <div class="background-image blog-homepage"></div>
 
         <!-- Main Navigation Bar -->
-        <nav class="main-nav">
-            <ul>
+        <nav class="main-nav flex flex-center">
+            <ul class="flex">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="blog-homepage.html">Blog</a></li>
@@ -35,50 +38,54 @@
         </nav>
 
         <!-- Page Title -->
-        <div class="page-title">
-            <h1>Welcome to My Blog</h1>
+        <div class="flex flex-center flex-fill" id="page-title">
+            <h1 class="orange">Welcome to My Blog</h1>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-        <section>
-            <header>
-                <h2>Blog Intro</h2>
+    <main class="flex flex-column margin-all-around">
+        <section class="flex flex-column margin-vertical">
+            <header class="flex flex-column margin-vertical">
+                <h2>Blog Homepage</h2>
             </header>
-            <div class="flex-container">
+            <div class="section-content flex flex-column margin-vertical">
                 <p>
-                    For now, kachow.
+                    Heuristic Content for Navigating Self-Development
                 </p>
             </div>
         </section>
 
-        <section>
-            <header>
+        <section class="flex flex-column margin-vertical">
+            <header class="flex flex-column margin-vertical">
                 <h2>All Posts</h2>
                 <p>Coming August 22nd!</p>
             </header>
-            <article>
-                <header>
-                    <h3>Post1</h3>
-                    <p>Date Written</p>
-                </header>
-                <a href="">
-                    <img src="" alt="insert post image here">
+            <article class="section-content flex flex-column vertical-margin">
+                <a>
+                    <header class="flex flex-column margin-vertical">
+                        <h3>Post1</h3>
+                        <p>Date Written</p>
+                    </header>
+                    <div class="media-object flex">
+                        <img src="" alt="insert post image here">
+                        <div class="media-content flex flex-column flex-fill">
+                            <p>
+                                Brief post summary
+                            </p>
+                        </div>
+                    </div>
                 </a>
-                <p>
-                    Brief post summary
-                </p>
             </article>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>The Marren Manifesto</p>
-        <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
+    <footer class="flex flex-center margin-all-around">
+        <p class="orange">The Marren Manifesto</p>
+        <p>&copy<time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
         <nav>
-            <ul>
+            <ul class="flex">
                 <li>
                     <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
                         rel="noopener noreferrer">
@@ -90,6 +97,13 @@
                     <a href="https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page"
                         target="_blank" rel="noopener noreferrer">
                         <img src="../resources/media/substack-logo.png" alt="My Substack" loading="lazy" />
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../resources/media/spotify-logo.png" alt="My Spotify Podcast" loading="lazy" />
                     </a>
                 </li>
 

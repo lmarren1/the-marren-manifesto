@@ -2,90 +2,116 @@
 <html lang="en-US">
 
 <head>
+    <!-- Page Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of the page's content">
+    <meta name="author" content="Luke Marren">
+    <meta name="robots" content="index, follow">
     <title>The Marren Manifesto | About</title>
-    <link href="resources/css/styles.css" rel="stylesheet">
-    <script src="resources/js/script.js"></script>
+    <link href="../resources/css/shared-styles.css" rel="stylesheet">
+    <script src="../resources/js/script.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FGWFXCGDC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-8FGWFXCGDC');
     </script>
 </head>
 
-<body>
-    <!-- Navigation Bar -->
-    <header class="header-background" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Panorama_4_-_Tranquility_Base.jpg);">
-        <nav class="nav main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="posts/blog-homepage.html">Blog</a></li>
+<body class="flex flex-column">
+    <header class="flex flex-column" id="main-header">
+
+        <!-- Page Header Background Image -->
+        <div class="background-image about"></div>
+
+        <!-- Main Navigation Bar -->
+        <nav class="main-nav flex flex-center">
+            <ul class="flex">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="blog-homepage.html">Blog</a></li>
             </ul>
         </nav>
-        <h1 class="about-title">Heuristic Content for Navigating Self-Development
-        </h1>
+
+        <!-- Page Title -->
+        <div class="flex flex-center flex-fill" id="page-title">
+            <h1 class="orange">Heuristic Content for Navigating Self-Development</h1>
+        </div>
     </header>
 
-    <main class="content-section container">
-        <section class="centered-content">
-            <h2 class="section-header">What's in it for You?</h2>
-            <p>Free, quick reads about:</p>
-                <ul class="ul-reader-engagement">
+    <!-- Main Content -->
+    <main class="flex flex-column margin-all-around">
+        <section class="flex flex-column margin-vertical">
+            <header class="flex flex-column margin-vertical">
+                <h2>What's in it for You?</h2>
+            </header>
+            <div class="section-content flex flex-column margin-vertical">
+                <p>Free, quick reads about:</p>
+                <br>
+                <ul>
                     <li>Insights I've learned to help navigate your own growth.</li>
                     <li>Anecdotes and heuristics for staying inspired and motivated.</li>
                     <li>Evidence of my struggle and the resolve I've needed to overcome it.</li>
                 </ul>
+            </div>
         </section>
 
-        <section class="centered-content">
-            <h2 class="section-header">What is The Marren Manifesto?</h2>
+        <section class="flex flex-column margin-vertical">
+            <header class="flex flex-column margin-vertical">
+                <h2>What is The Marren Manifesto?</h2>
+            </h2>
+            </header>
             <p>
                 I want to master the craft of developing software.
                 I believe dedicating myself to 10,000 hours of focused study/practice in software development will be transformative for me, and not just as a programmer.
             </p>
+            <br>
             <p>
                 The Marren Manifesto is my way of documenting this journey while also providing value to those around me.
                 I see it as a way to construct a beautiful life for myself by fusing my interests into a life-long career and making some friends along the way.
             </p>
         </section>
-
     </main>
 
-    <footer class="main-footer">
-        <div class="container main-footer-container">
-            <h3 class="blog-name">The Marren Manifesto</h3>
-
-            <p>&copy; <time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
-
-            <ul class="nav footer-nav">
-
+    <!-- Footer -->
+    <footer class="flex flex-center margin-all-around">
+        <p class="orange">The Marren Manifesto</p>
+        <p>&copy<time id="copyright-year"></time> Luke Marren. All rights reserved.</p>
+        <nav>
+            <ul class="flex">
                 <li>
-                    <a href= "https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank" rel="noopener noreferrer">
-                        <img src="resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy"/>
+                    <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy" />
                     </a>
                 </li>
 
                 <li>
-                    <a href= "https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page" target="_blank" rel="noopener noreferrer">
-                        <img src="resources/media/substack-logo.png" alt="My Substack" loading="lazy"/>
+                    <a href="https://substack.com/@themarrenmanifesto?r=2y4uzh&utm_campaign=profile&utm_medium=profile-page"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/substack-logo.png" alt="My Substack" loading="lazy" />
                     </a>
                 </li>
 
                 <li>
-                    <a href= "https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
-                        <img src="resources/media/github-logo.png" alt="My GitHub" loading="lazy"/>
+                    <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../resources/media/spotify-logo.png" alt="My Spotify Podcast" loading="lazy" />
                     </a>
                 </li>
 
+                <li>
+                    <a href="https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
+                        <img src="../resources/media/github-logo.png" alt="My GitHub" loading="lazy" />
+                    </a>
+                </li>
             </ul>
-        </div>
+        </nav>
     </footer>
-
 </body>
+
 </html>
