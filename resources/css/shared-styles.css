@@ -32,7 +32,8 @@
 body {
 	background-color: rgba(0, 47, 76, 1);
 	color: white;
-	font-family: "Fira Code", "Courier New", monospace;
+	font-family: "IBM Plex Mono", "Courier New", monospace;
+	font-style: normal;
 	text-align: center;
 }
 
@@ -55,7 +56,7 @@ body {
 
 /* Add margin around main content. */
 .margin-all-around {
-	margin: clamp(1vw, 2vw, 3vw) clamp(2vw, 3vw, 4vw);
+	margin: clamp(2vw, 3vw, 4vw) clamp(5vw, 7vw, 10vw);
 }
 
 .margin-vertical {
@@ -73,12 +74,11 @@ body {
 	====
 */
 
-/* Ensure font-weight is normal for all large font. */
 h1,
 h2,
 h3,
 h4 {
-	font-weight: normal;
+	font-weight: 100;
 }
 
 .orange {
