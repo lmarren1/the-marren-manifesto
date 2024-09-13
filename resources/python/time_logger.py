@@ -6,7 +6,7 @@ Name:
     time_logger
 
 Version:
-	0.1.2
+	0.1.3
 
 Summary:
     This script tracks progress made towards my 10,000-hour mastery goal.
@@ -23,7 +23,7 @@ Requires:
     datetime, os, csv, typing
 
 Date Last Modified:
-	August 14, 2024
+	September 13, 2024
 """
 
 import datetime as dt
@@ -195,7 +195,7 @@ def get_user_input() -> dict[str, Any]:
 
     # Get user input.
     date = check_date_format(input("What is the date you worked? (MM-DD-YY): "))
-    start_time = check_time_format(input("When did you START working? (HH-MM) "))
+    start_time = check_time_format(input("When did you START working? (HH:MM) "))
     end_time = check_time_format(input("When did you STOP working? (HH:MM) "))
     session_id = date.replace("-", "") + start_time.replace(":", "")
     motivation_level = check_rating_scale(
