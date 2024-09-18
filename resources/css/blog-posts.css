@@ -1,0 +1,35 @@
+/* 
+    ============================================================
+    STYLISTIC NOTES - Luke Marren
+    ============================================================
+
+	My aim is to create a stylesheet that is fast, efficient,
+	and maintainable and achieves responsive, device-agnostic 
+	styling.
+
+	I attempt to do this by combining the flexbox layout
+	model with OOCSS (object-oriented CSS) structure and skin,
+	utility classes, and the existing semantic HTML.
+	
+    ============================================================
+*/
+
+/* 
+	=========
+	STRUCTURE
+	=========
+*/
+
+/* 
+	====
+	SKIN
+	====
+*/
+
+.episode-1.background-image {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/d/d4/Supermarine_Spitfire_Mk_IXc_PV270_%2850351884951%29.jpg");
+}
+
+h1 {
+    font-size: clamp(5vw, 7vw, 9vw);
+}

@@ -103,6 +103,7 @@ h3 {
 /* Apply font size to regular text. */
 p {
 	font-size: clamp(1vw, 2vw, 2.5vw);
+	margin-top: clamp(1vw, 2vw, 3vw);
 }
 
 /* Remove underline and color from links. */
@@ -124,7 +125,6 @@ a {
 	z-index: -1;
 }
 
-/* Use Earth from space image for blog homepage. */
 .blog-homepage.background-image {
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/S65-63873_Clouds_over_the_Western_Pacific_and_the_full_Moon_seen_from_Earth.jpg");
 }
@@ -141,6 +141,12 @@ a {
 #main-header nav {
 	flex: 0 0 10%; /* Do not grow or shrink, fixed width of 10% */
 	border-bottom: 1px solid white;
+}
+
+.media-object img {
+	width: 50%;
+	height: auto;
+	margin: 0 1vw;
 }
 
 ul {
