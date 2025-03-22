@@ -1,7 +1,7 @@
 # The Marren Manifesto
 
 ## Purpose
-Coming Soon!
+Right now, I'm using this website to learn HTML, CSS, and Java/TypeScript.
 
 ## Motivation
 Coming Soon!
