@@ -1,93 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-    <!-- SEO Metadata -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Marren Manifesto by Luke Marren">
-    <meta name="author" content="Luke Marren">
-    <meta name="robots" content="index, follow">
-    <title>The Marren Manifesto | About</title>
-
-    <!-- Styling -->
-    <link href="resources/css/shared-styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
-
-    <!-- JS Scripts -->
-    <script src="resources/js/script.js"></script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FGWFXCGDC"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-8FGWFXCGDC');
-    </script>
-</head>
-
-<body class="flex flex-column">
-    <header class="flex flex-column" id="main-header">
-
-        <!-- Page Header Background Image -->
-        <div class="background-image about"></div>
-
-        <!-- Main Navigation Bar -->
-        <nav class="main-nav flex flex-center">
-            <ul class="flex">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-
-        <!-- Page Title -->
-        <div class="flex flex-center flex-fill" id="page-title">
-            <h1 class="orange">About</h1>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex flex-column margin-all-around">
-        <section class="flex flex-column margin-vertical">
-            <header class="flex flex-column margin-vertical">
-                <h2>What is the Marren Manifesto?</h2>
-            </header>
+<html>
+    <head>
+        <title>This is presented in the page tab</title>
+    </head>
+    <body>
+        <h1 id="top">Main header</h1>
+        <p>Below is a horizontal rule:</p>
+        <hr />
+        <h2>Subheader (goes down to h6)</h2>
+        <p>This is <b>bold</b> and this is <i>italic</i>.</p>
+        <p>This is a<br />line break<br />(horizontal rules and line breaks are "empty elements"</p>
+        <p>Here's a <sup>super</sup>script, while this is a <sub>sub</sub>script</p>
+        <p><strong>The strong</strong> tag is used for screen readers to emphasize words, while <em>the emphasis</em> is used to say them in a subtly different way</p>
+        <blockquote cite="themarrenmanifesto.com">
+            <p>The blockquote element is used for quotes that span a paragraph or more</p>
+            <q>The q element is used for shorter quotes, but I'm not sure if internet explorer applies quotes around it</q>
+        </blockquote>
+        <p><abbr title="Professor">Prof</abbr>... abbr with the title attribute is used for abbreviations/acronyms</p>
+        <p><cite>Cite is used for citations</cite> and it places italics around what's being cited</p>
+        <p>The <dfn>dfn</dfn> element is used for the defining first instance of jargon/terminology</p>
+        <address>
             <p>
-                Nothing much so far...
+                <a href="themarrenmanifesto.com">The address element contains contact info for the page author</a>
             </p>
-            <p>
-                But I'm having fun!
-            </p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="flex flex-center margin-all-around">
-        <p class="orange">The Marren Manifesto</p>
+            <p>123 Street</p>
+        </address>
+        <p><ins>The ins element is used to show additions</ins>, while the <del>del</del> element shows things that have been removed/are irrelevant</p>
+        <p>The s element <s>shows that something</s> is now irrelevant, but shouldn't be removed</p>
+        <ul>
+            <li>This is a "list item" in an unordered list</li>
+        </ul>
+        <ol>
+            <li>This is an ordered list item</li>
+        </ol>
+        <dl>
+            <dt>This is the "definition term" of a definition list</dt>
+            <dd>This is the definition</dd>
+        </dl>
+        <a href="themarrenmanifesto.com">URL</a> stands for <q>Uniform Resource Locator</q></br >
+        <a href="mailto:123@gmail.com">This starts up your email</a></br >
+        <a href="themarrenmanifesto.com" target="_blank">This opens the link in a new window</a></br >
+        <a href="#top">This is a link to the top of the page</a></br >
         <p>
-            &copy <time id="copyright-year"></time> Luke Marren. This work is licensed under a <a
-                href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank">Creative Commons
-                Attribution-NoDerivatives 4.0 International License</a>.
+            The following html is an image.
+            <img src="wikimages.org" alt="This is a photo of a dolphin" title="This dolphin is cool" height="200px" width="200px">
+            Images, unlike block elements like h1, are inline elements that will flow with the rest of the text.
+            The align property used to be used in img elements with values of left, right, top, middle, and bottom to dictate text flow around an image.
         </p>
-        <nav>
-            <ul class="flex">
-                <li>
-                    <a href="https://www.linkedin.com/in/luke-marren-aa9912206/" target="_blank"
-                        rel="noopener noreferrer">
-                        <img src="resources/media/linkedin-logo.png" alt="My LinkedIn" loading="lazy" />
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/lmarren1" target="_blank" rel="noopener noreferrer">
-                        <img src="resources/media/github-logo.png" alt="My GitHub" loading="lazy" />
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </footer>
-</body>
-
+        <p>Remember to save images at the right <b>size</b> and <b>format</b>.</p>
+        <ul>
+            <li>Use JPEG format for images with many different colors</li>
+            <li>Use PNG/GIF formats for images with few different colors</li>
+        </ul>
+    </body>
 </html>
